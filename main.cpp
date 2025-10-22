@@ -31,11 +31,16 @@ int main() {
     i = 0;
     while (fin1 >> colors[i++]);
     fin1.close();
+    list<Goat> trip;
     while(true){
         int response=main_menu();
+        if(response==1){
+            add_goat(trip,names,colors);
+        }
         if(response==4){
             break;
         }
+
 
     }
     
@@ -58,5 +63,7 @@ int main_menu(){
 }
 
 void add_goat(list<Goat> &trip, string [], string []){
+    int rand=
+    int rand1=
 
 }
