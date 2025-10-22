@@ -31,8 +31,14 @@ int main() {
     i = 0;
     while (fin1 >> colors[i++]);
     fin1.close();
+    while(true){
+        int response=main_menu();
+        if(response==4){
+            break;
+        }
 
-    main_menu();
+    }
+    
 
 
 
@@ -40,7 +46,6 @@ int main() {
 }
 
 int main_menu(){
-    while(true){
         cout<<"*** GOAT MANAGER 3001! ***"<<endl;
         cout<<"[1] Add a goat"<<endl;
         cout<<"[2] Delete a goat"<<endl;
@@ -49,21 +54,9 @@ int main_menu(){
         cout<<"choice  --> ";
         int response;
         cin>>response;
-        if(response==1){
-
-        }
-        else if(response==2){
-
-        }
-        else if(response==3){
-
-        }
-        else if(response==4){
-            return 0;
-        }
-    }
+        return response;
 }
 
 void add_goat(list<Goat> &trip, string [], string []){
-    
+
 }
