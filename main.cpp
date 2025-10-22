@@ -78,9 +78,34 @@ void display_trip(list<Goat> trip){
         cout<<"No goats on the trip!"<<endl;
     }
     else{
+        int x=1;
         for(auto it=trip.begin(); it!=trip.end(); ++it){
-            int x=1;
+            
             cout<<"["<<x<<"] "<<it->get_name()<<" ("<<it->get_age()<<", "<<it->get_color()<<")"<<endl;
+            x++;
         }
     }
+}
+void delete_goat(list<Goat> &trip){
+    int x=select_goat(trip);
+    if(x==0){
+        cout<<"No goats on the trip!";
+    }
+    else{
+        auto it=trip.begin();
+        advance(it,x);
+        trip.erase(it);
+    }
+
+}
+int select_goat(list<Goat> trip){
+    if(trip.empty()){
+        return 0;
+    }
+    cout<<"Which goat to delete?"<<endl;
+    display_trip(trip);
+     int response;
+    cin>>response;
+    return response;
+
 }
