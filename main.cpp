@@ -37,10 +37,15 @@ int main() {
         if(response==1){
             add_goat(trip,names,colors);
         }
+
+
+        if(response==3){
+            display_trip(trip);
+        }
         if(response==4){
             break;
         }
-
+    cout<<endl;       
 
     }
     
@@ -68,8 +73,14 @@ void add_goat(list<Goat> &trip, string names[], string colors[]){
     trip.push_back(Goat(names[randname],randage,colors[randcolor]));
 }
 void display_trip(list<Goat> trip){
-    for(int i=0;i<trip.size();i++){
-        cout<<""
-    
+    // Just in case you call display trip when there is no goats.
+    if(trip.empty()){
+        cout<<"No goats on the trip!"<<endl;
+    }
+    else{
+        for(auto it=trip.begin(); it!=trip.end(); ++it){
+            int x=1;
+            cout<<"["<<x<<"] "<<it->get_name()<<" ("<<it->get_age()<<", "<<it->get_color()<<")"<<endl;
+        }
     }
 }
