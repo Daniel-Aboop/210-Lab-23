@@ -37,21 +37,20 @@ int main() {
         if(response==1){
             add_goat(trip,names,colors);
         }
-
-
-        if(response==3){
+        else if(response==2){
+            delete_goat(trip);
+        }
+        else if(response==3){
             display_trip(trip);
         }
-        if(response==4){
+        else if(response==4){
             break;
         }
-    cout<<endl;       
-
+        else{
+            cout<<"Response needs to be 1-4"<<endl;
+        }
+    cout<<endl;
     }
-    
-
-
-
     return 0;
 }
 
@@ -71,6 +70,7 @@ void add_goat(list<Goat> &trip, string names[], string colors[]){
     int randage=rand()%(MAX_AGE-1)+1;
     int randname=rand()%(SZ_NAMES-1)+1; 
     trip.push_back(Goat(names[randname],randage,colors[randcolor]));
+    cout<<"Goat added!"<<endl;
 }
 void display_trip(list<Goat> trip){
     // Just in case you call display trip when there is no goats.
@@ -81,7 +81,7 @@ void display_trip(list<Goat> trip){
         int x=1;
         for(auto it=trip.begin(); it!=trip.end(); ++it){
             
-            cout<<"["<<x<<"] "<<it->get_name()<<" ("<<it->get_age()<<", "<<it->get_color()<<")"<<endl;
+            cout<<"["<<x<<"] "<<it->get_name()<<setw(2)<<" ("<<it->get_age()<<", "<<it->get_color()<<")"<<endl;
             x++;
         }
     }
@@ -89,14 +89,13 @@ void display_trip(list<Goat> trip){
 void delete_goat(list<Goat> &trip){
     int x=select_goat(trip);
     if(x==0){
-        cout<<"No goats on the trip!";
+        cout<<"No goats on the trip!"<<endl;
     }
     else{
         auto it=trip.begin();
-        advance(it,x);
+        advance(it,x-1);
         trip.erase(it);
     }
-
 }
 int select_goat(list<Goat> trip){
     if(trip.empty()){
@@ -104,8 +103,8 @@ int select_goat(list<Goat> trip){
     }
     cout<<"Which goat to delete?"<<endl;
     display_trip(trip);
+    cout<<"choice  --> ";
      int response;
     cin>>response;
     return response;
-
 }
