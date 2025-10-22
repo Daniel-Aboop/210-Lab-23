@@ -1,3 +1,6 @@
+// COMSC-210 | Lab 23 | Daniel Santisteban
+// IDE used: VS Code
+
 #include <iostream>
 #include <fstream>
 #include <iomanip>
@@ -18,7 +21,7 @@ int main() {
     bool again;
 
     // read & populate arrays for names and colors
-    ifstream fin("names.txt");
+     ifstream fin("names.txt");
     string names[SZ_NAMES];
     int i = 0;
     while (fin >> names[i++]);
@@ -28,7 +31,7 @@ int main() {
     i = 0;
     while (fin1 >> colors[i++]);
     fin1.close();
-
+    
 
 
 

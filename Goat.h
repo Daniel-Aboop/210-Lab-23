@@ -11,9 +11,20 @@ private:
     int age;
     string color;
 public: 
-    Goat()                          { name = ""; age = 0; color = ""; }
+    Goat(){ name = ""; age = 0; color = ""; }
     // write three more constructors
-
+    Goat(string name){
+        this->name=name;
+    }
+    Goat(string name, int age){
+        this->name=name;
+        this->age=age;
+    }
+    Goat(string name,int age,string color){
+        this->name=name;
+        this->age=age;
+        this->color=color;
+    }
     // setters and getters
     void set_name(string n)         { name = n; };
     string get_name() const         { return name; };
