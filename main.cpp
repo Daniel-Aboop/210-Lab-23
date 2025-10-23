@@ -6,6 +6,7 @@
 #include <iomanip>
 #include <list>
 #include "Goat.h"
+#include <set>
 using namespace std;
 
 const int SZ_NAMES = 200, SZ_COLORS = 25, MAX_AGE = 20;
@@ -81,7 +82,7 @@ void display_trip(list<Goat> trip){
         int x=1;
         for(auto it=trip.begin(); it!=trip.end(); ++it){
             
-            cout<<"["<<x<<"] "<<it->get_name()<<setw(2)<<" ("<<it->get_age()<<", "<<it->get_color()<<")"<<endl;
+            cout<<"["<<x<<"]  "<<it->get_name()<<setw(2)<<" ("<<it->get_age()<<", "<<it->get_color()<<")"<<endl;
             x++;
         }
     }
